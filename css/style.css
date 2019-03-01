@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  overflow-x: hidden;
+  position: relative;
+  background-image: url("../img/bg.svg");
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.container {
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-width: 60rem;
+  min-height: 30rem;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 4rem;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-rows: 4rem 1fr;
+      grid-template-rows: 4rem 1fr;
+}
+
+.logo__wrap {
+  width: 100%;
+  height: 3rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / 9;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.logo__wrap a {
+  text-decoration: none;
+}
+
+.inputs__area {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  padding: 1rem;
+  position: relative;
+}
+
+.inputs__area #message {
+  height: 2.5rem;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  width: 91%;
+  top: -15rem;
+  -webkit-box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.inputs__area #message.show {
+  top: -2.5rem;
+  visibility: visible;
+  opacity: 1;
+}
+
+.inputs__area #message.alert {
+  color: #ececec;
+  background-color: #000000;
+}
+
+.inputs__area #message.success {
+  color: #4a3f09;
+  background-color: #e4c322;
+}
+
+.inputs__area #bookForm {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.inputs__area .form__control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.inputs__area .form__control label {
+  font-weight: 700;
+  color: #000000;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.4rem;
+}
+
+.inputs__area .form__control .book__input {
+  width: 100%;
+  height: 2.5rem;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border: 2px solid #000000;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: 'Roboto'sans-serif;
+  -webkit-transition: border-color 0.2s ease-out;
+  transition: border-color 0.2s ease-out;
+}
+
+.inputs__area .form__control .book__input:focus {
+  border-color: #e4c322;
+}
+
+.inputs__area .btn {
+  width: 7.5rem;
+  height: 2.5rem;
+  background-color: #000000;
+  border: none;
+  outline: none;
+  color: #ececec;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.inputs__area .btn:hover {
+  background-color: #e4c322;
+  color: #000000;
+}
+
+.list__area {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 5;
+  grid-column: 4 / 9;
+  width: 100%;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 1.7rem;
+}
+
+.list__area .list__header {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+  padding: 0 1rem;
+}
+
+.list__area .list__header span {
+  display: inline-block;
+  width: 31%;
+  max-width: 31%;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+.list__area .list__header span:nth-of-type(4) {
+  width: 5%;
+  text-align: right;
+}
+
+.list__area .list__item {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #ececec;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
+}
+
+.list__area .list__item:hover {
+  background-color: #e4c322;
+  -webkit-box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+}
+
+.list__area .list__item span {
+  display: inline-block;
+  width: 31%;
+  max-width: 31%;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+.list__area .list__item span:nth-of-type(4) {
+  width: 5%;
+  text-align: right;
+}
+
+.list__area .list__item .svg__wrap {
+  width: 100%;
+}
+
+.list__area .list__item .svg__wrap a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  background: #ffffff;
+}
+
+.list__area .list__item .svg__wrap a:hover path {
+  stroke: #e4c322;
+}
+
+.list__area .list__item .svg__wrap svg {
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+}
+
+.list__area .list__item .svg__wrap svg path {
+  -webkit-transform: translate(1.5px, 1.5px);
+          transform: translate(1.5px, 1.5px);
+  fill: none;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  -webkit-transition: stroke 0.2s ease-out;
+  transition: stroke 0.2s ease-out;
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    background-image: url("../img/mobile-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .container {
+    min-width: 90%;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .inputs__area {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1 / 9;
+    margin-top: 3rem;
+  }
+  .inputs__area #message {
+    width: 96%;
+  }
+  .list__area {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    grid-column: 1 / 9;
+  }
+}
+/*# sourceMappingURL=style.css.map */
